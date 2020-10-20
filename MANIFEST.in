@@ -1,2 +1,2 @@
-include _pbs.so
-include pbs.pth
+include pbs/_pbs.so
+include pbs/pbs.pth

@@ -4,4 +4,4 @@ import pbs
 
 class TestPbsPythonUnit(unittest.TestCase):
     def test_test(self):
-        self.assertTrue(True)
+        self.assertEquals(pbs.ATTR_q, 'shrug')
