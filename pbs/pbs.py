@@ -89,7 +89,7 @@ class attrlArray(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, attrlArray, name)
     __repr__ = _swig_repr
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _pbs.new_attrlArray(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -867,12 +867,12 @@ import types
 
 # Default linux resources to get from the mom
 #
-default_linux_res = [   
+default_linux_res = [
     "availmem",	    # available memory size in KB
     "ideal_load",	# static ideal_load value
     "loadave",      # the current load average
     "max_load",	    # static max_load value
-    "ncpus",        # number of cpus 
+    "ncpus",        # number of cpus
     "physmem",      # physical memory size in KB
     "resi",		    # resident memory size for a pid or session in KB
     "totmem",	    # total memory size in KB
@@ -881,7 +881,7 @@ default_linux_res = [
 
 # Default irix6 resources to get from the mom
 #
-default_irix6_res = [   
+default_irix6_res = [
     "availmem",	# available memory size in KB
     "loadave",      # the current load average
     "ncpus",        # number of cpus
@@ -891,7 +891,7 @@ default_irix6_res = [
     "quota",	# quota information (sizes in KB)
 ]
 
-default_mom_res = [   
+default_mom_res = [
     "arch",		# the architecture of the machine
     "uname",	# the architecture of the machine
     "cput",		# cpu time for a pid or session
@@ -902,7 +902,7 @@ default_mom_res = [
     "nsessions",	# number of sessions in the system
     "nusers",	# number of users in the system
     "size",		# size of a file or filesystem
-    "host",		# Name  of host on which job should be run 
+    "host",		# Name  of host on which job should be run
     "nodes",	# Number and/or type of nodes to be reserved for exclusive use by the job
     "other",	# Allows a  user  to  specify  site  specific  information
     "software",	# Allows a user to specify software required by the job
@@ -917,9 +917,9 @@ def check_resp(dict, str):
   """
   if not str:
     return
-  
+
   ## Value can contain the '=' char :-(
-  #  
+  #
   l =  string.split(str, '=')
   key = string.strip(l[0])
   if len(l) > 2:
@@ -963,7 +963,7 @@ def use_user_keywords(id, d, l):
       resp = getreq(id)
       check_resp(d, resp)
     else:
-      raise TypeError, 'Expected a string got %s :%s' %(type(res), res) 
+      raise TypeError('Expected a string got %s :%s' % (type(res), res))
 
 def get_mom_values(id, list = None):
   """
@@ -983,7 +983,7 @@ def get_mom_values(id, list = None):
     use_default_keywords(id, d)
   else:
     use_user_keywords(id, d , list)
-     
+
   return d
 
 version_info = ( 4, 4, 0 )
@@ -999,7 +999,7 @@ version = 'SARA pbs_python version 4.4.0'
 
 def error():
   """
-  Check if there is an error, if so fetch the error message string. 
+  Check if there is an error, if so fetch the error message string.
   It says more then a number!
   """
   e = get_error()

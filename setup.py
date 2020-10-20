@@ -24,7 +24,7 @@ setup(
         (site_packages_path, ['pbs.pth']),
         (os.path.join(site_packages_path, 'pbs'), ['_pbs.so'])
     ],
-    python_requires='>=2.7, <3',
+    python_requires='>=2.7',
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
