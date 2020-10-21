@@ -18,15 +18,12 @@ jobs:
       uses: gabrielfalcao/pyenv-action@v6
       with:
         default: "${{ matrix.python-version }}"
-        command: pip install -U pip  # upgrade pip after installing python
+        command: pip install -U pip
 
     - name: Install dependencies
       run: |
         rpm -ivh ${{ secrets.REDACTED_URL }}centos/7.5.1804/exabyte/x86_64/Packages/torque-6.0.0.1-1.adaptive.el7.centos.x86_64.rpm
         rpm -ivh ${{ secrets.REDACTED_URL }}centos/7.5.1804/exabyte/x86_64/Packages/torque-devel-6.0.0.1-1.adaptive.el7.centos.x86_64.rpm
-        yum -y --enablerepo=extras install epel-release
-        yum -y install python-pip
-        python -m pip install --upgrade pip setuptools==44.1.1 wheel
         pip install -r requirements-dev.txt --no-deps
 
     - name: Unit tests
