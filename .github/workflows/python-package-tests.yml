@@ -21,10 +21,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo yum install python-pip
+        yum install python-pip
         python -m pip install --upgrade pip setuptools wheel
         pip install -r requirements-dev.txt --no-deps
-        sudo yum install torque-devel
+        yum install torque-devel
 
     - name: Unit tests
       run: |
