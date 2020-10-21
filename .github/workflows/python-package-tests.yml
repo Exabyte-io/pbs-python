@@ -14,6 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install python version
+      uses: gabrielfalcao/pyenv-action@v6
+      with:
+        default: "${{ matrix.python-version }}"
+        command: pip install -U pip  # upgrade pip after installing python
+
     - name: Install dependencies
       run: |
         rpm -ivh ${{ secrets.REDACTED_URL }}centos/7.5.1804/exabyte/x86_64/Packages/torque-6.0.0.1-1.adaptive.el7.centos.x86_64.rpm
