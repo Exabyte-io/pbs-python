@@ -16,13 +16,13 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/exabyte-io/pbs-python',
     author='Radik Fattakhov',
-    author_email='radikft@gmail.com',
+    author_email='info@exabyte.io',
     license='LGPLv3',
     keywords=['pbs'],
     packages=find_packages(exclude=['tests*']),
     data_files=[
-        (site_packages_path, ['pbs.pth']),
-        (os.path.join(site_packages_path, 'pbs'), ['_pbs.so'])
+        os.path.join(site_packages_path, 'pbs'), ['_pbs.so'],
+        os.path.join(site_packages_path, 'pbs'), ['_pbs.cpython-38-x86_64-linux-gnu.so']
     ],
     python_requires='>=2.7',
     classifiers=[
