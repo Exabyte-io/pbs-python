@@ -1,2 +1,2 @@
 include pbs/_pbs.so
-include pbs/pbs.pth
+include pbs/_pbs.cpython-38-x86_64-linux-gnu.so
