@@ -12,7 +12,9 @@ jobs:
           - centos/python-27-centos7
           - centos/python-36-centos7
           - centos/python-38-centos7
-    container: ${{ matrix.container-name }}
+    container:
+      image: ${{ matrix.container-name }}
+      options: --user root
 
     steps:
     - uses: actions/checkout@v2
