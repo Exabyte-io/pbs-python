@@ -10,7 +10,6 @@ jobs:
       matrix:
         container-name:
           - centos/python-27-centos7
-          - centos/python-36-centos7
           - centos/python-38-centos7
     container:
       image: ${{ matrix.container-name }}
