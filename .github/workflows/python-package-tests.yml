@@ -21,12 +21,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        yum update
-        yum -y install epel-release
-        yum -y install python-pip
-        python -m pip install --upgrade pip setuptools wheel
-        pip install -r requirements-dev.txt --no-deps
+        yum -y --enablerepo=extras install epel-release
         yum -y install torque-devel
+        yum -y install python-pip
+        python -m pip install --upgrade pip setuptools==44.1.1 wheel
+        pip install -r requirements-dev.txt --no-deps
 
     - name: Unit tests
       run: |
