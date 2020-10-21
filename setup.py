@@ -21,8 +21,8 @@ setup(
     keywords=['pbs'],
     packages=find_packages(exclude=['tests*']),
     data_files=[
-        os.path.join(site_packages_path, 'pbs'), ['_pbs.so'],
-        os.path.join(site_packages_path, 'pbs'), ['_pbs.cpython-38-x86_64-linux-gnu.so']
+        (os.path.join(site_packages_path, 'pbs'), ['_pbs.so']),
+        (os.path.join(site_packages_path, 'pbs'), ['_pbs.cpython-38-x86_64-linux-gnu.so'])
     ],
     python_requires='>=2.7',
     classifiers=[
