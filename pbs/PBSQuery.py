@@ -3,7 +3,7 @@
 #          Bas van der Vlies (basv@sara.nl)
 #
 # SVN INFO:
-#   $Id: PBSQuery.py 339 2015-03-10 16:55:29Z bas $
+#   $Id: PBSQuery.py 368 2018-10-22 10:16:12Z bas $
 #
 """
 Usage: from PBSQuery import PBSQuery
@@ -199,10 +199,11 @@ class PBSQuery:
                         key = '%s' %(a.name)
 
                     new[key] = a.value
-
                 else:
                     # Don't split , between ()
                     values = [x[1] for x in REG_SPLIT_COMMA_BRACE.findall(a.value)]
+                    if len(values) == 1:
+                        values = [ a.value ]
 
                     # We must creat sub dicts, only for specified
                     # key values

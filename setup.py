@@ -1,32 +1,35 @@
 import os
-from setuptools import setup
+from setuptools import find_packages, setup
 from distutils import sysconfig
+
+
+with open('./README.md', 'r') as f:
+    long_description = f.read()
 
 site_packages_path = sysconfig.get_python_lib(prefix='./')
 
 setup(
     name='pbs-python',
-    packages=['pbs'],
-    version='4.4.2.1',
-    author='Radik Fattakhov',
-    author_email='radikft@gmail.com',
-    description='openpbs/torque python interface',
-    keywords=['pbs'],
-    data_files=[
-        (site_packages_path, ['pbs.pth']),
-        (os.path.join(site_packages_path, 'pbs'), ['_pbs.so'])
-    ],
-    url='http://github.com/radik/pbs-python',
+    version='2020.10.19',
+    description='Openpbs/Torque Python interface',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    url='https://github.com/exabyte-io/pbs-python',
+    author='Exabyte Inc.',
+    author_email='info@exabyte.io',
     license='LGPLv3',
+    keywords=['pbs'],
+    packages=find_packages(exclude=['tests*']),
+    data_files=[
+        (os.path.join(site_packages_path, 'pbs'), ['_pbs.so']),
+        (os.path.join(site_packages_path, 'pbs'), ['_pbs.cpython-38-x86_64-linux-gnu.so'])
+    ],
+    python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,<3.9',
     classifiers=[
+        'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.8',
         'Operating System :: POSIX :: Other',
         'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'
-    ],
-    long_description='''\
-This is pip-package of pbs_python 4.4.1 (http://oss.trac.surfsara.nl/pbs_python)
-by  Bas van der Vlies (bas.vandervlies@surfsara.nl).
-Native extensions from this package compiled on CentOS 7 with PBS Torque 5
-installed on it and probably not compatible with other versions.
-'''
+    ]
 )
