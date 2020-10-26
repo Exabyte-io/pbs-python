@@ -28,6 +28,7 @@ setup(
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.8',
         'Operating System :: POSIX :: Other',
         'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'
     ]
