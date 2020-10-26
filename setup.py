@@ -15,7 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/exabyte-io/pbs-python',
-    author='Radik Fattakhov',
+    author='Exabyte Inc.',
     author_email='info@exabyte.io',
     license='LGPLv3',
     keywords=['pbs'],
