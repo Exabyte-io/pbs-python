@@ -10,7 +10,7 @@ site_packages_path = sysconfig.get_python_lib(prefix='./')
 
 setup(
     name='pbs-python',
-    version='2020.10.19',
+    version='2020.10.19.1',
     description='Openpbs/Torque Python interface',
     long_description=long_description,
     long_description_content_type='text/markdown',
