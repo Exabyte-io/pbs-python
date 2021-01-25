@@ -1,6 +1,7 @@
 import os
 from setuptools import find_packages, setup
 from distutils import sysconfig
+import versioneer
 
 
 with open('./README.md', 'r') as f:
@@ -10,7 +11,8 @@ site_packages_path = sysconfig.get_python_lib(prefix='./')
 
 setup(
     name='pbs-python',
-    version='2020.10.19.1',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Openpbs/Torque Python interface',
     long_description=long_description,
     long_description_content_type='text/markdown',
