@@ -10,7 +10,10 @@ site_packages_path = sysconfig.get_python_lib(prefix='./')
 
 setup(
     name='pbs-python',
-    version='2020.10.19.1',
+    setup_requires=['setuptools_scm'],
+    use_scm_version={
+        'version_scheme': 'post-release',
+    },
     description='Openpbs/Torque Python interface',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -26,6 +29,11 @@ setup(
             'pbs/_pbs.cpython-38-x86_64-linux-gnu.so'
         ]),
     ],
+    extras_require={
+        "test": [
+            "coverage[toml]>=5.3",
+        ]
+    },
     python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,<3.9',
     classifiers=[
         'Programming Language :: Python',
